@@ -25,10 +25,8 @@ class Application
         end
       end
     elsif req.path.match(/add/)
-    binding.pry
-      @@items.each do |item|
-        resp.write add(item)
-      end
+      item = req.params
+      resp.write add(item)
     else
       resp.write "Path Not Found"
     end
