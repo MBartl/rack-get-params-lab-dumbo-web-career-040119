@@ -25,7 +25,6 @@ class Application
         end
       end
     elsif req.path.match(/add/)
-    binding.pry
       item = req.params["item"]
       resp.write add(item)
     else
