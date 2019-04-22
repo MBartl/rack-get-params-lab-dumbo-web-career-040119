@@ -23,9 +23,9 @@ class Application
         end
       end
     elsif req.path.match(/add/)
-      @@items.each do |item|
-        resp.write add(item)
-      end
+      search_term = req.params["q"]
+
+      resp.write add(search_term)
     else
       resp.write "Path Not Found"
     end
